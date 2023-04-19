@@ -1,9 +1,9 @@
 const { Schema, Mongoose } = require("../share/mongoose.export");
 
-const Empresa = new Schema({
-  nome: {
+const Company = new Schema({
+  name: {
     type: String
   }
 });
 
-Mongoose.model("empresas", Empresa);
+Mongoose.model("companies", Company);

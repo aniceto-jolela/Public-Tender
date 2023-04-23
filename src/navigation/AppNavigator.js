@@ -35,7 +35,7 @@ const MainTabs = () => {
         headerShown: false,
         tabBarStyle: {
           borderTopColor: isDarkmode ? themeColor.dark100 : "#c0c0c0",
-          backgroundColor: isDarkmode ? themeColor.dark200 : "#ffffff",
+          backgroundColor: isDarkmode ? themeColor.dark200 : "#997B60",
         },
       }}
     >

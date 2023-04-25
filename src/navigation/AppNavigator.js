@@ -11,6 +11,7 @@ import Home from "../screens/Home";
 import SecondScreen from "../screens/SecondScreen";
 import Game from "../screens/Game";
 import Profile from "../screens/Profile";
+import Job from "../screens/admin/job";
 
 const MainStack = createNativeStackNavigator();
 const Main = () => {
@@ -53,14 +54,14 @@ const MainTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Game"
-        component={Game}
+        name={true?"Job":"Game"}
+        component={true?Job:Game}
         options={{
           tabBarLabel: ({ focused }) => (
-            <TabBarText focused={focused} title="Game" />
+            <TabBarText focused={focused} title={true?"Job":"Game"} />
           ),
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} icon={"game-controller"} />
+            <TabBarIcon focused={focused} icon={true?"code-working":"game-controller"} />
           ),
         }}
       />

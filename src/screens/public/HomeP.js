@@ -24,16 +24,11 @@ export default function ({ navigation }) {
         <Section>
           <SectionContent>
             <Text fontWeight="bold" style={{ textAlign: "center" }}>
-              These UI components provided by Rapi UI
+              Welcome to the Public Tender Public
             </Text>
+         
             <Button
-              style={{ marginTop: 10 }}
-              text="Rapi UI Documentation"
-              status="info"
-              onPress={() => Linking.openURL("https://rapi-ui.kikiding.space/docs/")}
-            />
-            <Button
-              text="Go to second screen"
+              text="Create P&R"
               onPress={() => {
                 navigation.navigate("SecondScreen");
               }}

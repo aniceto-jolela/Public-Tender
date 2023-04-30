@@ -2,16 +2,17 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import { themeColor, useTheme } from "react-native-rapi-ui";
 import TabBarIcon from "../share/TabBarIcon";
 import TabBarText from "../share/TabBarText";
 
-import Home from "../screens/Home";
-import SecondScreen from "../screens/SecondScreen";
-import Game from "../screens/Game";
-import Profile from "../screens/Profile";
-import Job from "../screens/admin/job";
+import SecondScreen from "../screens/public/SecondScreen";
+import Game from "../screens/public/Game";
+import Profile from "../screens/public/Profile";
+import Job from "../screens/admin/Job";
+import HomeP from "../screens/public/HomeP";
+import Home from "../screens/admin/Home";
+
 
 const MainStack = createNativeStackNavigator();
 const Main = () => {
@@ -43,7 +44,7 @@ const MainTabs = () => {
       {/* these icons using Ionicons */}
       <Tabs.Screen
         name="Home"
-        component={Home}
+        component={true?Home:HomeP}
         options={{
           tabBarLabel: ({ focused }) => (
             <TabBarText focused={focused} title="Home" />

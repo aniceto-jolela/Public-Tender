@@ -37,9 +37,9 @@ export default function ({ navigation }) {
               }}
             />
             <Button
-              text="Create P&R"
+              text="Create Q&A"
               onPress={() => {
-                navigation.navigate("SecondScreen");
+                navigation.navigate("CreateQA");
               }}
               style={{
                 marginTop: 10,

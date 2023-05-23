@@ -5,7 +5,7 @@ import { Layout, Picker, Text, Section, SectionContent,Button, themeColor } from
 
 const optionsPerPage = [2, 3, 4];
 
-const Job = () => {
+const Job = ({ navigation }) => {
   const [page, setPage] = React.useState(0);
   const [itemsPerPage, setItemsPerPage] = React.useState(optionsPerPage[0]);
   const [pickerValue, setPickerValue] = React.useState(null);
@@ -58,25 +58,25 @@ const Job = () => {
           <ScrollView horizontal={true}>
             <DataTable >
               <DataTable.Header style={styles.head}>
-                <DataTable.Title style={{backgroundColor:'pink'}}><Text>Nº</Text></DataTable.Title>
-                <DataTable.Title style={{backgroundColor:'green'}}><Text>Empresas</Text></DataTable.Title>
-                <DataTable.Title numeric style={{backgroundColor:'yellow'}}><Text>Perguntas</Text></DataTable.Title>
-                <DataTable.Title numeric style={{backgroundColor:'orange'}}><Text>A</Text></DataTable.Title>
-                <DataTable.Title numeric style={{backgroundColor:'crimson'}}><Text>B</Text></DataTable.Title>
-                <DataTable.Title numeric style={{backgroundColor:'purple'}}><Text>C</Text></DataTable.Title>
-                <DataTable.Title numeric style={{backgroundColor:'silver'}}><Text>D</Text></DataTable.Title>
-                <DataTable.Title numeric style={{backgroundColor:'gold'}}><Text>Acções </Text></DataTable.Title>
+                <DataTable.Title ><Text>Nº</Text></DataTable.Title>
+                <DataTable.Title ><Text>Empresas</Text></DataTable.Title>
+                <DataTable.Title numeric ><Text>Perguntas</Text></DataTable.Title>
+                <DataTable.Title numeric ><Text>A</Text></DataTable.Title>
+                <DataTable.Title numeric ><Text>B</Text></DataTable.Title>
+                <DataTable.Title numeric ><Text>C</Text></DataTable.Title>
+                <DataTable.Title numeric ><Text>D</Text></DataTable.Title>
+                <DataTable.Title numeric ><Text>Acções </Text></DataTable.Title>
               </DataTable.Header>
 
               <DataTable.Row style={styles.dataWrapper}>
-                <DataTable.Cell style={{backgroundColor:'pink',width:50}}><Text>1</Text></DataTable.Cell>
-                <DataTable.Cell style={{backgroundColor:'green',width:106}}><Text onPress={() => _alertIndex('Perguntas')}>Frozen yogurt</Text></DataTable.Cell>
-                <DataTable.Cell numeric style={{backgroundColor:'yellow',width:112}}><Text onPress={() => _alertIndex('Perguntas')}>Frozen yogurt</Text></DataTable.Cell>
-                <DataTable.Cell numeric style={{backgroundColor:'orange',width:40}}><Text onPress={() => _alertIndex('PA')}>159 5837 5</Text></DataTable.Cell>
-                <DataTable.Cell numeric style={{backgroundColor:'crimson',width:43}}><Text onPress={() => _alertIndex('PB')}>6.45630</Text></DataTable.Cell>
-                <DataTable.Cell numeric style={{backgroundColor:'purple',width:40}}><Text onPress={() => _alertIndex('PC')}>159</Text></DataTable.Cell>
-                <DataTable.Cell numeric style={{backgroundColor:'silver',width:40}}><Text onPress={() => _alertIndex('PD')}>54</Text></DataTable.Cell>
-                <DataTable.Cell numeric style={{backgroundColor:'gold',width:90}}><View>
+                <DataTable.Cell ><Text>1</Text></DataTable.Cell>
+                <DataTable.Cell ><Text onPress={() => _alertIndex('Perguntas')}>Frozen yogurt</Text></DataTable.Cell>
+                <DataTable.Cell numeric style={{width:112}}><Text onPress={() => _alertIndex('Perguntas')}>Frozen yogurt</Text></DataTable.Cell>
+                <DataTable.Cell numeric style={{width:40}}><Text onPress={() => _alertIndex('PA')}>159 5837 5</Text></DataTable.Cell>
+                <DataTable.Cell numeric style={{width:43}}><Text onPress={() => _alertIndex('PB')}>6.45630</Text></DataTable.Cell>
+                <DataTable.Cell numeric style={{width:40}}><Text onPress={() => _alertIndex('PC')}>159</Text></DataTable.Cell>
+                <DataTable.Cell numeric style={{width:40}}><Text onPress={() => _alertIndex('PD')}>54</Text></DataTable.Cell>
+                <DataTable.Cell numeric style={{width:90}}><View>
                 <View >
                   <Button
                   text="Edit"
@@ -84,6 +84,9 @@ const Job = () => {
                   width={90}
                   color={themeColor.primary}
                   style={{ borderRadius: 20, height: 25, paddingTop: 2 }}
+                  onPress={() => {
+                    navigation.navigate("EditQA");
+                  }}
                 />
                  
                 <Button
@@ -97,6 +100,8 @@ const Job = () => {
                   </View>
                   </DataTable.Cell>
               </DataTable.Row>
+
+  
  
               <DataTable.Pagination
                 page={page}

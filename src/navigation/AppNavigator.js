@@ -8,10 +8,13 @@ import TabBarText from "../share/TabBarText";
 
 import SecondScreen from "../screens/public/SecondScreen";
 import Game from "../screens/public/Game";
-import Profile from "../screens/public/Profile";
+import Profile from "../screens/admin/Profile";
 import Job from "../screens/admin/Job";
 import HomeP from "../screens/public/HomeP";
 import Home from "../screens/admin/Home";
+import CreateCompany from "../screens/admin/CreateCompany";
+import CreateQA from "../screens/admin/CreateQA";
+import EditQA from "../screens/admin/EditQA";
 
 
 const MainStack = createNativeStackNavigator();
@@ -23,6 +26,10 @@ const Main = () => {
       }}
     >
       <MainStack.Screen name="MainTabs" component={MainTabs} />
+      <MainStack.Screen name="CreateCompany" component={CreateCompany} />
+      <MainStack.Screen name="CreateQA" component={CreateQA} />
+      <MainStack.Screen name="EditQA" component={EditQA} />
+      <MainStack.Screen name="Job" component={Job} />
       <MainStack.Screen name="SecondScreen" component={SecondScreen} />
     </MainStack.Navigator>
   );
